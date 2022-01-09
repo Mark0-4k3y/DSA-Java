@@ -10,7 +10,10 @@ public class Fraction_ObjectsClass
 //        fracNum1.print();
 
         Fraction_Class fracNum2=new Fraction_Class();
-        fracNum1.addFractions(fracNum2);
-        fracNum1.print();
+//        fracNum1.addFractions(fracNum2);
+//        fracNum1.print();
+
+        Fraction_Class fracNum3=Fraction_Class.addBothFractionNumber(fracNum1, fracNum2);
+        fracNum3.print();
     }
 }

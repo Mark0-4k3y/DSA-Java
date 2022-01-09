@@ -22,6 +22,19 @@ public class Fraction_Class
         simplify(num, deno);
     }
 
+    public Fraction_Class(int num, int deno)
+    {
+        if(deno==0){
+            System.out.println("Invalid denominator ;@");
+            return;
+        }
+        this.num=num;
+        this.deno=deno;
+        simplify(num, deno);
+    }
+
+
+
     //This is the function to simplify the fraction into the simplest form
     private void simplify(int num, int deno)
     {
@@ -63,6 +76,7 @@ public class Fraction_Class
         simplify(this.num, this.deno);
     }
 
+    //This function will add the both fractions but store the result by updating the fraction number by which it's called
     public void addFractions(Fraction_Class fracNum2)
     {
         int newDen=0;
@@ -73,6 +87,18 @@ public class Fraction_Class
         simplify(newNum, newDen);
         this.num=newNum;
         this.deno=newDen;
+    }
+
+    //This function will add the both the function and store the result in the new fraction number:
+    public static Fraction_Class addBothFractionNumber(Fraction_Class fracNum1, Fraction_Class fracNum2)
+    {
+        Fraction_Class newFracNum=new Fraction_Class(1,1);
+
+        newFracNum.num=fracNum1.num* fracNum2.deno + fracNum1.deno* fracNum2.num;
+        newFracNum.deno=fracNum1.deno* fracNum2.deno;
+
+
+        return newFracNum;
     }
 }
 
