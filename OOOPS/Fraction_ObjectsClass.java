@@ -13,7 +13,13 @@ public class Fraction_ObjectsClass
 //        fracNum1.addFractions(fracNum2);
 //        fracNum1.print();
 
-        Fraction_Class fracNum3=Fraction_Class.addBothFractionNumber(fracNum1, fracNum2);
+        Fraction_Class fracNum3=Fraction_Class.subFractions(fracNum1, fracNum2);
         fracNum3.print();
+
+        Fraction_Class fracNum4=Fraction_Class.mulFractions(fracNum1, fracNum2);
+        fracNum4.print();
+
+        Fraction_Class fracNum5=Fraction_Class.diviFractions(fracNum1, fracNum2);
+        fracNum5.print();
     }
 }
