@@ -48,20 +48,11 @@ public class Fraction_Class
             System.out.println("The fraction number is: "+num);
             return;
         }
+        if(num==0){
+            System.out.println("The fraction number is: "+0);
+            return;
+        }
         System.out.println("The fraction number is: "+num+"/"+deno);
-    }
-
-
-    //Setting the denominator
-    public void setDenominator()
-    {
-
-    }
-
-    //Getting the denominator
-    public void getDenominator()
-    {
-
     }
 
 
@@ -71,4 +62,45 @@ public class Fraction_Class
         this.num+=this.deno;
         simplify(this.num, this.deno);
     }
+
+    public void addFractions(Fraction_Class fracNum2)
+    {
+        int newDen=0;
+        int newNum=0;
+
+        newNum=this.num* fracNum2.deno + this.deno* fracNum2.num;
+        newDen=this.deno* fracNum2.deno;
+        simplify(newNum, newDen);
+        this.num=newNum;
+        this.deno=newDen;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
