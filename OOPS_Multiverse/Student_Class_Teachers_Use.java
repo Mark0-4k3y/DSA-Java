@@ -1,6 +1,9 @@
 package OOPS_Multiverse;
 import OOOPS.Student_Class;
-public class Student_Class_Teachers_Use extends Student_Class
+//We have to import the student class because it's not present in the same package!
+
+
+public class Student_Class_Teachers_Use
 {
     public static void main(String[] args)
     {
