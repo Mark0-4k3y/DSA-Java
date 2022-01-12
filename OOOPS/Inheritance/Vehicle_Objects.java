@@ -4,7 +4,7 @@ public class Vehicle_Objects
 {
     public static void main(String[] args)
     {
-        Vehicle_Class veh1=new Vehicle_Class();
+        Vehicle_Class veh1=new Vehicle_Class("General ");
         veh1.setColor("White");
         veh1.mileage=11;
         veh1.maxSpeed=120;
