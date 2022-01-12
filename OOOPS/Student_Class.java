@@ -19,7 +19,11 @@ public class Student_Class
     private static int NUMBER=0;
 
 
-
+/*
+Below I made three constructors which have same named but difference parameters.
+This is known as function overloading.
+Function overloading occurs within the same class.
+ */
     //Here we will constructor which is default present in the class
     public Student_Class()
     {
