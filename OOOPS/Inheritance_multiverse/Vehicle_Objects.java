@@ -6,7 +6,7 @@ public class Vehicle_Objects
     public static void main(String[] args)
     {
 
-        Vehicle_Class veh=new Vehicle_Class();
+//        Vehicle_Class veh=new Vehicle_Class();
 //        veh.setColor("White");
 //        veh.mileage=11;
 //        veh.maxSpeed=120;
@@ -17,7 +17,7 @@ public class Vehicle_Objects
 
         Truck_Class truck=new Truck_Class(11, 120, "Diesel");
         truck.setColor("White");
+        truck.maxCapacity=1200;
         truck.print();
-
     }
 }
