@@ -2,7 +2,7 @@ package OOOPS.Inheritance;
 
 public class Car_Class extends Vehicle_Class
 {
-    int numDoors;
+    int numDoors=4;
 
     //Here I am making a Car constructor which will define the constructor
     public Car_Class(){

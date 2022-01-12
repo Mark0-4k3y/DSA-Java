@@ -2,7 +2,7 @@ package OOOPS.Inheritance;
 
 public class MotorBike_Class extends Vehicle_Class
 {
-    int numOfSeats;
+    int numOfSeats=2;
 
     /*
        Here I am making a function same for MotorBikes objects.

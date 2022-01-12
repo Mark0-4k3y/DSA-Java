@@ -32,5 +32,7 @@ public class Vehicle_Objects
         bCycle.hasGear=true;
         bCycle.setColor("Red and Black");
         bCycle.print();
+
+
     }
 }
