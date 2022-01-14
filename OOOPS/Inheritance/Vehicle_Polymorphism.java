@@ -72,7 +72,5 @@ public class Vehicle_Polymorphism
         car.numDoors=2;
         car.print();
 
-        car.print();
-        car.numDoors=8;
     }
 }
