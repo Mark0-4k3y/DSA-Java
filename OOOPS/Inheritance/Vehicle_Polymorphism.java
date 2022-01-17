@@ -66,7 +66,7 @@ public class Vehicle_Polymorphism
         Vehicle_Class vehicle2;
         vehicle2=new Car_Class();
 //        vehicle2.numDoors=2; Here we are not accessible to use the numDoors property of function, so we will do typecast.
-        //Type Casting to make the polymorphism mode accessable to object class
+        //Type Casting to make the polymorphism mode accessible to object class
 
         Car_Class car=(Car_Class) vehicle2;
         car.numDoors=2;
