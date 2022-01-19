@@ -11,6 +11,7 @@ public interface Vehicle
     //And the constant member has to be declared as static.
     public final static String Message="Interface Class";
 
+
     public boolean isCustomized();
     public int numberOfTyres();
 }

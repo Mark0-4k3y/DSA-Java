@@ -23,7 +23,6 @@ public abstract class Abstract_Vehicle
     private String color;
     protected String fuelType;
 
-
     //Here I will make a constructor for the Abstract vehicle class
     //I cannot be able to make object from this abstract class but, abstract class has print function which have vehicle name in it.
     //So we have to take ot from the subclasses we will make.

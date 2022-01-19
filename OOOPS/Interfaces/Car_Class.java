@@ -14,6 +14,7 @@ public class Car_Class extends Abstract_Vehicle implements Vehicle,Car
     }
 
 
+
     //Here I have to implement Abstract Company Name function.
     @Override
     public void abstract_CompanyName()
