@@ -24,7 +24,9 @@ public class Vehicle_Class
         System.out.println("Vehicle's constructor refer to, "+vehicleName+"!");
     }
 
-    public Vehicle_Class(){}
+    public Vehicle_Class(){
+        System.out.println("Using the vehicle constructor");
+    }
 
     //I will make these properties inherit by other class of vehicle(Car, MotorBike, and Bicycle).
     //By using the "extend" keyword the child classes(Car, MotorBike, and Bicycle), will inherit the properties from the parent class(Vehicle class).
