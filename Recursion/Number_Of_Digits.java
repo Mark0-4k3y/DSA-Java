@@ -40,18 +40,31 @@ public class Number_Of_Digits
     }
 
 
+    //This is the function which we return sum of digits:
+    public static int sumOfDigit(long num)
+    {
+        //Base Case:
+        if(num<10) return (int)num;
+
+        //Assumed small part answer
+        int smallPartResult=sumOfDigit(num/10);
+
+        //Giving the sum of the digits present in it.
+        return  ((int)(num%10)+smallPartResult);
+    }
+
+
     public static void main(String[] args)
     {
         System.out.println("Enter the number of the queries you wanna run: ");
         int q=X.nextInt();
         for(int t=1; t<=q; t++){
-//            System.out.println("\nEnter the number, to find it's digits: ");
-//            long num=X.nextLong();
-//            System.out.println("The number of digits in "+num+" is: "+numDigits(num));
+            System.out.println("\nEnter the number, to find it's digits: ");
+            long num=X.nextLong();
+            System.out.println("The number of digits in "+num+" is: "+numDigits(num));
+            System.out.println("The number of zero's in "+num+" is: "+zeroNum(num));
+            System.out.println("The sum of the digits is: "+sumOfDigit(num));
 
-            System.out.println("\nEnter the number, to find the number of zero's present in it: ");
-            long num2=X.nextLong();
-            System.out.println("The number of digits in "+num2+" is: "+zeroNum(num2));
         }
     }
 }
