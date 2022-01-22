@@ -34,7 +34,7 @@ public class Geometric_Sum
         //Assumed part which is solved:
         /*
           *********CAUTION***********************
-            I was doing a mistake which is the instead of range-1 I wrote --range.
+            I was doing a mistake here which was, instead of range-1 I wrote --range.
             which lead to decrease in actual value of range.
             Due to this when its reaches at, fraction part the range actual value was 0 instead of the value needed at the constructor.
          */
