@@ -1,4 +1,4 @@
-package Recursion.Searching_AND_Sorting;
+package Recursion;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 import java.util.Scanner;
 
