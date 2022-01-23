@@ -1,7 +1,9 @@
 package Recursion;
+import OOOPS.DynamicArray_class;
+
 import java.util.Scanner;
 
-public class nth_FibonacciNumber
+public class nth_FibonacciNumber extends DynamicArray_class
 {
     public static Scanner X=new Scanner(System.in);
 
