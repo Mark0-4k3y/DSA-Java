@@ -1,6 +1,7 @@
 package Recursion;
 import OOOPS.DynamicArray_class;
 
+import javax.crypto.spec.PBEKeySpec;
 import java.util.Scanner;
 
 public class nth_FibonacciNumber extends DynamicArray_class
@@ -51,6 +52,15 @@ public class nth_FibonacciNumber extends DynamicArray_class
     }
 
 
+    //Doing it with recursion without doing any bullshit
+    public static int bestFibbo(int nth)
+    {
+        if (nth==0) return 0;
+        if (nth==1 || nth==2) return 1;
+
+        return bestFibbo(nth-1) + bestFibbo(nth-2);
+    }
+
     public static void main(String[] args)
     {
         System.out.println("Enter the number of queries you wanna run!: ");
@@ -58,7 +68,7 @@ public class nth_FibonacciNumber extends DynamicArray_class
         for(int t=0; t<q; t++){
             System.out.println("Enter the nth position to find the Fibonacci number: ");
             int nth=X.nextInt();
-            System.out.println("The Fibonacci number at "+nth+" position is: "+fibonacci(nth));
+            System.out.println("The Fibonacci number at "+nth+" position is: "+bestFibbo(nth));
         }
     }
 }
