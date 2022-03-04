@@ -1,14 +1,15 @@
 package Recursion.Searching_AND_Sorting;
 
-import java.lang.reflect.Array;
-
 public class Linear_Search
 {
     //This is the method to do linear search using the normal or what we did early.
     public static<G> boolean simpleLinearSearch(G arr[], G ele)
     {
+        //I made this element variable in case I will have to return the Index instead of boolean
+        //G element = null;
         for(int i=0; i<arr.length; i++){
             if(arr[i]==ele){
+//                element=arr[i];
                 System.out.println("\nThe element "+ele+" present at index: "+i);
                 return true;
             }
@@ -16,11 +17,25 @@ public class Linear_Search
         return false;
     }
 
+
+
     //This is the function, which use recursion to do linear search
-    public static<G> boolean recursiveLinearSearch(G[] arr, G ele)
+    public static<G> boolean recursiveLinearSearch(G[] arr, G ele, int sI)
     {
-        return true;
+        if (sI>=arr.length) return false;
+
+        System.out.println(arr[sI]+" "+ele);
+        if (arr[sI]==ele){
+            System.out.println("The element "+ele+" present at index "+sI+" in the given array.");
+            return true;
+        }
+
+        boolean smallPart=recursiveLinearSearch(arr, ele, sI+1);
+        return smallPart;
     }
+
+
+
 
     public static<G> void print(G arr[])
     {
@@ -38,7 +53,7 @@ public class Linear_Search
         for(int i=0; i<arr.length; i++){
             arr[i]=i*10;
         }
-        System.out.println("Is the element present in the array?! "+simpleLinearSearch(arr, 20));
+        System.out.println("Is the element present in the array?! "+recursiveLinearSearch(arr, 20, 0)+" \n");
 
 
         String arrStr[]=new String[26];
@@ -46,7 +61,7 @@ public class Linear_Search
             arrStr[i] = "A"+(char)(65+i);
         }
         print(arrStr);
-        System.out.println("Is the string present in the array?! "+simpleLinearSearch(arrStr, "AB"));
+        System.out.println("Is the string present in the array?! "+recursiveLinearSearch(arrStr, "AA", 0));
     }
 
 
