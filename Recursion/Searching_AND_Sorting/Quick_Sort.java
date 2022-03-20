@@ -54,6 +54,7 @@ public class Quick_Sort extends Array_Class
     /**
      * The Mistake I was doing is that is partition function I was assuming that pivot Index is from 0th index.
      * But it should be from sI.
+     * The another mistake I was doing is not to handle the elements which is equal to pivot element
      * @param args
      */
 
