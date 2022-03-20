@@ -51,6 +51,11 @@ public class Quick_Sort extends Array_Class
         return pivotIndex;
      }
 
+    /**
+     * The Mistake I was doing is that is partition function I was assuming that pivot Index is from 0th index.
+     * But it should be from sI.
+     * @param args
+     */
 
     public static void main(String[] args)
     {
