@@ -18,10 +18,16 @@ public class Bubble_Sort extends Array_Class
                     isSorted=false;
                 }
             }
-//            System.out.println("Runned");
             if (isSorted) return;
         }
     }
+
+    //Doing Bubble osrt using Recursion.
+    public static void bubbleSortR(int[] arr)
+    {
+        if (arr.length<=1) return;
+    }
+
 
 
     public static void main(String[] args)
