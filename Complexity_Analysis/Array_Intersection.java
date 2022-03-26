@@ -34,6 +34,17 @@ public class Array_Intersection extends Array_Class
     //The another method to solve this is by sort the smallest array and than apply binary search.
     public static void intersectionB(int[] arr1, int[] arr2)
     {
+        if(arr1.length==0 || arr2.length==0) return;
+
+        //Comparing the length of both the arrays for sorting the smallest one.
+        int len1=arr1.length, len2=arr2.length;
+        if (arr1.length>arr2.length){
+            Arrays.sort(arr2);
+        }else{
+            Arrays.sort(arr1);
+        }
+
+        //Now applying binary search on the arrays.
 
     }
 
