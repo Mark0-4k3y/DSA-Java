@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Unique_Element extends Array_Class
 {
     //This is the best approach to find unique using XOR.
+    //Complexity will be O(n).
     public static int findUniqueB(int[] arr)
     {
         if(arr.length==1) return arr[0];
