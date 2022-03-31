@@ -21,7 +21,8 @@ public class Remove_Duplicates
         list.add(arr[0]);
 
         for(int ele:arr){
-
+            //Index of array list is given as:
+            // index = list.size()-1;
             if (list.get(list.size()-1) != ele) list.add(ele);
         }
 
