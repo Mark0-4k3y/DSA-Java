@@ -11,4 +11,9 @@ public class Node<G>
         this.data=data;
         next=null;
     }
+
+    public Node()
+    {
+        next=null;
+    }
 }
