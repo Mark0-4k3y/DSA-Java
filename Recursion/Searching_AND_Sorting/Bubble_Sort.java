@@ -22,7 +22,7 @@ public class Bubble_Sort extends Array_Class
         }
     }
 
-    //Doing Bubble osrt using Recursion.
+    //Doing Bubble sort using Recursion.
     public static void bubbleSortR(int[] arr)
     {
         if (arr.length<=1) return;
