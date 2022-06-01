@@ -9,7 +9,7 @@ public class Append_Last_nNode extends Linked_List_Basic
 
         Node<Integer> lastNode=head;
         int noOfNodes=1;
-        //I have to take the lastNode.next!= null isted of lastNdde!=null.
+        //I have to take the lastNode.next!= null instead of lastNode!=null.
         //Because in lastNode!=null, lastNode reach to the null node.
         while(lastNode.next!=null){
             noOfNodes++;
