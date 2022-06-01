@@ -3,24 +3,35 @@ import java.util.Scanner;
 
 public class Append_Last_nNode extends Linked_List_Basic
 {
-    public static Node<Integer> append(Node<Integer> head, int nNodes)
+    public static Node<Integer> appendLastNToFirst(Node<Integer> head, int n)
     {
-        if(head==null || nNodes==0) return head;
+        if(head==null || head.next==null || n==0) return head;
 
-        int count=1;
         Node<Integer> lastNode=head;
+        int noOfNodes=1;
+        //I have to take the lastNode.next!= null isted of lastNdde!=null.
+        //Because in lastNode!=null, lastNode reach to the null node.
         while(lastNode.next!=null){
-            count++;
+            noOfNodes++;
             lastNode=lastNode.next;
         }
 
-        int run=0;
-        while(run<(count-nNodes)){
-            lastNode.next=head;
-            lastNode=head;
-            head=head.next;
+        if(n==noOfNodes){
+            return head;
         }
-        return head;
+
+        if(n>noOfNodes) n=n-noOfNodes;
+        int rounds=noOfNodes-n;
+
+        Node<Integer> temp=head;
+        while(rounds!=0){
+            lastNode.next=temp;
+            lastNode=temp;
+            temp=temp.next;
+            lastNode.next=null;
+            rounds--;
+        }
+        return temp;
     }
 
     public static void main(String[] args)
@@ -28,7 +39,7 @@ public class Append_Last_nNode extends Linked_List_Basic
         Scanner X=new Scanner(System.in);
         Node<Integer> head=takeInput1();
         printLL2(head);
-        head=append(head, 5);
+        head=appendLastNToFirst(head, 5);
         printLL2(head);
     }
 }
