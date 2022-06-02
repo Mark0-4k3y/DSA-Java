@@ -24,9 +24,11 @@ public class Recursion_printLL extends Linked_List_Basic
         Scanner X=new Scanner(System.in);
         Node<Integer> head=takeInput1();
 
+        System.out.print("Linked List: ");
         printLL_R(head);
         System.out.print("@null\n");
 
+        System.out.print("Reverse Linked List: ");
         printRevLL_R(head);
         System.out.print("@null\n");
     }
