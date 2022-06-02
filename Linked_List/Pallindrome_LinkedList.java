@@ -1,9 +1,61 @@
 package Linked_List;
+import javax.print.attribute.IntegerSyntax;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Pallindrome_LinkedList extends Linked_List_Basic
 {
+    //This has space complexity of S(1).
+    public static boolean isPalindromeBest(Node<Integer> head)
+    {
+        if (head==null || head.next==null) return true;
+        if (head.next.next==null){
+            if (head.data==head.next.data) return true;
+            else return false;
+        }
+
+        int numOdNodes=0;
+        Node<Integer> temp=head;
+        while(temp!=null){
+            numOdNodes++;
+            temp=temp.next;
+        }temp=head;
+        Node<Integer> firstList=head;
+        Node<Integer> secondList=head.next;
+
+//        Instead of finding the middle I can also use Fast slow appraoch
+//        int count=1;
+//        while(count<numOdNodes/2){
+//            temp=secondList;
+//            secondList=secondList.next;
+//            count++;
+//        }temp.next=null;
+
+        secondList=middle(head);
+        secondList=reverseLL(secondList);
+        while(secondList!=null && firstList!=null){
+            if (secondList.data!=firstList.data) return false;
+            secondList=secondList.next;
+            firstList=firstList.next;
+        }
+        return true;
+    }
+    //Fast and Slow approach to find the middle one.
+    public static Node<Integer> middle(Node<Integer> head)
+    {
+        Node<Integer> fast=head;
+        Node<Integer> slow=head;
+
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+
+
+
+    //This has space complexity of S(n).
     public static boolean isPalindrome(Node<Integer> head)
     {
         //Base Case.
@@ -32,10 +84,29 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
         Scanner X=new Scanner(System.in);
         Node<Integer> head=takeInput1();
         printLL2(head);
-        boolean isPall=isPalindrome(head);
+        boolean isPall=isPalindromeBest(head);
         System.out.println("Is the given linked list palindrome?"+isPall);
     }
+
+    public static Node<Integer> reverseLL(Node<Integer> head) {
+        if (head == null || head.next == null) return head;
+
+        Node<Integer> curNode = head.next;
+        Node<Integer> preNode = head;
+        Node<Integer> nextNode = curNode.next;
+
+        preNode.next = null;
+        while (nextNode != null) {
+            curNode.next = preNode;
+            preNode = curNode;
+            curNode = nextNode;
+            nextNode = nextNode.next;
+        }
+        curNode.next = preNode;
+        return curNode;
+    }
 }
+
 
 
 // public class Solution
