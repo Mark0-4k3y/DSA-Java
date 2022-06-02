@@ -32,11 +32,11 @@ public class Linked_List_Basic
     public static void printLL2(Node<Integer> head)
     {
         Node<Integer> tempH=head;
-        while(tempH!=null){
-            System.out.print(tempH.data+" -> ");
-            tempH=tempH.next;
-        }
-        System.out.print("null\n");
+            while(tempH!=null){
+                System.out.print(tempH.data+" -> ");
+                tempH=tempH.next;
+            }
+            System.out.print("null\n");
     }
     public static void printLL2H(Node<Integer> head)
     {
