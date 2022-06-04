@@ -9,17 +9,17 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
     public static boolean isPalindromeBest(Node<Integer> head)
     {
         if (head==null || head.next==null) return true;
-        if (head.next.next==null){
-            if (head.data==head.next.data) return true;
-            else return false;
-        }
+//        if (head.next.next==null){
+//            if (head.data==head.next.data) return true;
+//            else return false;
+//        }
 
-        int numOdNodes=0;
-        Node<Integer> temp=head;
-        while(temp!=null){
-            numOdNodes++;
-            temp=temp.next;
-        }temp=head;
+//        int numOdNodes=0;
+//        Node<Integer> temp=head;
+//        while(temp!=null){
+//            numOdNodes++;
+//            temp=temp.next;
+//        }temp=head;
         Node<Integer> firstList=head;
         Node<Integer> secondList=head.next;
 
