@@ -20,8 +20,9 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
 //            numOdNodes++;
 //            temp=temp.next;
 //        }temp=head;
+
         Node<Integer> firstList=head;
-        Node<Integer> secondList=head.next;
+        Node<Integer> secondList=head;
 
 //        Instead of finding the middle I can also use Fast slow appraoch
 //        int count=1;
@@ -32,7 +33,14 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
 //        }temp.next=null;
 
         secondList=middle(head);
+
+        printLL2(firstList);
+        printLL2(secondList);
+
         secondList=reverseLL(secondList);
+
+        printLL2(firstList);
+        printLL2(secondList);
         while(secondList!=null && firstList!=null){
             if (secondList.data!=firstList.data) return false;
             secondList=secondList.next;
