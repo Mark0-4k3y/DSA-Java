@@ -146,14 +146,10 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
 
 
 // public class Solution {
-
 // 	public static LinkedListNode<Integer> reverse(LinkedListNode<Integer> head){
-
-
 // 		if(head.next==null ) {
 // 			return head;
 // 		}
-
 // 		LinkedListNode<Integer> tail=head.next;
 // 		LinkedListNode<Integer> newHead= reverse(head.next);
 // 		tail.next=head;
@@ -186,16 +182,12 @@ public class Pallindrome_LinkedList extends Linked_List_Basic
 // 			head2=head2.next;
 // 		}
 // 		return true;
-
 // 	}
-
 // }
 
 
 
 // This is an addition approach towards palindrome number
-
-
 // public class Solution
 // {
 // 	public static boolean isPalindrome(LinkedListNode<Integer> head)
