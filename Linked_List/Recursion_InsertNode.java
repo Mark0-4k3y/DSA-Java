@@ -19,13 +19,13 @@ public class Recursion_InsertNode extends Linked_List_Basic
     {
         if(head==null && position<1) return head;
 
-        if(position==1){
+        if(position==0){
             Node<Integer> insertNode=new Node<>(data);
-            insertNode.next=head.next;
-            head.next=insertNode;
-            return head;
+            insertNode.next=head;
+            return insertNode;
         }else{
-            return insertNode_Rec(head.next, position-1, data);
+            head.next = insertNode_Rec(head.next, position-1, data);
+            return head;
         }
     }
 
@@ -34,7 +34,7 @@ public class Recursion_InsertNode extends Linked_List_Basic
         Node<Integer> head=takeInput1();
         printLL2(head);
 
-        insertNode_R(head, 2, 26);
+        head=insertNode_R(head, 4, 26);
         printLL2(head);
     }
 }
