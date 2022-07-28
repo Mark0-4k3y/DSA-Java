@@ -43,7 +43,7 @@ public class Is_Array_Sorted extends Array_Class
     }
 
     //Solving the question without using recursion, but doesn't create a new array.
-    public static boolean isSort(int[] arr, int sI)
+    public static boolean isSortB(int[] arr, int sI)
     {
         //In this one I will also take starting Index "sI" as Input.
 
@@ -57,7 +57,7 @@ public class Is_Array_Sorted extends Array_Class
         if (arr[sI]>arr[sI+1]) return false;
 
         //Generating the smaller part answer.
-        boolean isSorted=isSort(arr, sI+1);
+        boolean isSorted=isSortB(arr, sI+1);
 
         //Returning the answer which is depending on the rest of the array.
         return isSorted;
@@ -67,7 +67,20 @@ public class Is_Array_Sorted extends Array_Class
     {
         int[] arr=Array_Class();
         printArray(arr);
-        System.out.println("Is the array sorted?! "+isSort(arr, 0));
+        System.out.println("Is the array sorted?! "+isSorted(arr, 0));
+    }
+
+
+    //Practised time approach.
+    public static boolean isSorted(int[] arr, int si)
+    {
+        //Base Case.
+        if(si==arr.length-1) return true;
+
+        //For the nth-1 i.e, for the whole array other than the first element.
+        if(!(isSorted(arr, si+1))) return false;
+
+        else return (arr[si]<arr[si+1]);
     }
 
 }
