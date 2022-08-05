@@ -90,6 +90,17 @@ public class Remove_Char_X
 //        System.out.println("The string after replacing the char "+x+" with char "+"y is: "+replaceChar(str, x, y));
 
 //        System.out.println("The string after replacing the value of pi with 3.14 is: "+replacePie(str));
-        System.out.println("The string after replacing the consecutive duplicates is: "+removeConsecutive(str));
+//        System.out.println("The string after replacing the consecutive duplicates is: "+removeConsecutive(str));
+//        System.out.println("Remove X from string "+str+": "+removeX(str));
+    }
+
+    //Practice Code:
+    public static String removeX(String str)
+    {
+        if(str.length()<=0) return str;
+
+        if(str.charAt(0)=='x') return removeX(str.substring(1, str.length()));
+        else return str.charAt(0) + removeX(str.substring(1, str.length()));
     }
 }
+
