@@ -147,4 +147,107 @@ public class Merge_Sort extends Array_Class
         mergeSortB(arr);
         printArray(arr);
     }
+
+
+
+
+    //Practice Section Again.
+    //Creating Array
+    public static void mergeSort_CA(int arr[])
+    {
+        if (arr.length<=1) return;
+
+        int mid=arr.length/2;
+
+        int[] arr1=new int[mid];
+        for(int i=0; i<mid; i++){
+            arr1[i]=arr[i];
+        }
+
+        int[] arr2=new int[arr.length-mid];
+        for(int i=0; i<arr2.length; i++){
+            arr2[i]=arr[i+mid];
+        }
+
+        mergeSort_CA(arr1);
+        mergeSort_CA(arr2);
+        merge(arr, arr1, arr2);
+    }
+    public static void merge(int arr[], int[] arr1, int[] arr2)
+    {
+        int ind1=0, ind2=0;
+
+        int ind=0;
+        while(ind1<arr1.length && ind2<arr2.length){
+            if (arr1[ind1]<arr[ind2]){
+                arr[ind]=arr1[ind1];
+                ind++;
+                ind1++;
+            }else{
+                arr[ind]=arr2[ind2];
+                ind++;
+                ind2++;
+            }
+        }
+
+        while(ind1<arr1.length){
+            arr[ind]=arr1[ind1];
+            ind++;
+            ind1++;
+        }
+        while(ind2<arr2.length){
+            arr[ind]=arr2[ind2];
+            ind++;
+            ind2++;
+        }
+    }
+
+    //Without creating an Array.
+    public static void mergeSort_WCA(int[] arr)
+    {
+        if (arr.length<=1) return;
+        mergeSort_WCA(arr, 0, arr.length-1);
+    }
+    private static void mergeSort_WCA(int[] arr, int si, int ei)
+    {
+        if (si>=ei) return;
+
+        int midInd=(si+ei)/2;
+        mergeSort_WCA(arr, si, midInd);
+        mergeSort_WCA(arr, midInd+1, ei);
+        merge_WCA(arr, si, midInd, ei);
+    }
+    public static void merge_WCA(int[] arr, int si, int midI, int ei)
+    {
+        int leftP_Index=si, rightP_Index=midI+1;
+
+        int[] arr1=new int[ei-si+1];
+        int ind=0;
+        while(leftP_Index<=midI && rightP_Index<=ei){
+            if (arr[leftP_Index] < arr[rightP_Index]) {
+                arr1[ind]=arr[leftP_Index];
+                leftP_Index++;
+                ind++;
+            }else{
+                arr1[ind]=arr[rightP_Index];
+                rightP_Index++;
+                ind++;
+            }
+        }
+
+        while(leftP_Index<=midI){
+            arr1[ind]=arr[leftP_Index];
+            leftP_Index++;
+            ind++;
+        }
+        while(rightP_Index<=ei){
+            arr1[ind]=arr[rightP_Index];
+            rightP_Index++;
+            ind++;
+        }
+
+        for (int index=0; index<arr1.length; index++){
+            arr[index+si]=arr1[index];
+        }
+    }
 }
