@@ -4,7 +4,7 @@ public class Recursion_Delete_Node extends Linked_List_Basic
 {
     public static Node<Integer> deleteNode_Rec(Node<Integer> head, int pos)
     {
-        if(head==null || pos<0) return head;
+        if(head==null) return head;
 
         if(pos==0){
             return head.next;
