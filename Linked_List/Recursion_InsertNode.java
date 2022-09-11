@@ -29,12 +29,35 @@ public class Recursion_InsertNode extends Linked_List_Basic
         }
     }
 
+
+    public static void insertNode(Node<Integer> head, int position, int data)
+    {
+        if (head==null) return;
+        if (position==0) {
+            Node<Integer> newNode=new Node<Integer>(head.data);
+            newNode.next=head.next;
+            head.data=data;
+            head.next=newNode;
+            return;
+        }
+
+        if (position==1){
+            Node<Integer> newNode=new Node<>(data);
+            newNode.next=head.next;
+            head.next=newNode;
+            return;
+        }
+
+        insertNode(head.next, position-1, data);
+    }
+
+
     public static void main(String[] args)
     {
         Node<Integer> head=takeInput1();
         printLL2(head);
 
-        head=insertNode_R(head, 4, 26);
+        head=insertNode_R(head, 0, 26);
         printLL2(head);
     }
 }
