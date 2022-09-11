@@ -8,11 +8,10 @@ public class Recursion_Delete_Node extends Linked_List_Basic
 
         if(pos==0){
             return head.next;
-        }else{
-            //Updated list = deleteNodeRec(head.next, pos-1);
-            head.next=deleteNode_Rec(head.next, pos-1);
-            return head;
         }
+
+        head.next=deleteNode_Rec(head.next, pos-1);
+        return head;
     }
 
     public static void main(String[] args)
