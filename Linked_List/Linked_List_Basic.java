@@ -65,7 +65,7 @@ public class Linked_List_Basic
         Node<Integer> head=null;
         Node<Integer> lastNode=null;
 
-        System.out.println("Enter the data for the node: ");
+        System.out.println("Enter the data for the node, and enter -1 to exit: ");
         int data=X.nextInt();
 
         while(data!=-1){
@@ -86,6 +86,7 @@ public class Linked_List_Basic
             System.out.println("Enter the data for the node: ");
             data= X.nextInt();
         }
+        System.out.println("Data insertion complete for the linked list!\n");
         return head;
     }
 

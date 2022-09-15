@@ -1,7 +1,7 @@
 package Linked_List;
 import java.util.Scanner;
 
-public class Merge_TwoSorted_LinkedList extends Node
+public class Merge_TwoSorted_LinkedList extends Linked_List_Basic
 {
     public static Node<Integer> mergeTwoSortedLinkedLists(Node<Integer> head1, Node<Integer> head2)
     {
@@ -41,6 +41,14 @@ public class Merge_TwoSorted_LinkedList extends Node
 
     public static void main(String[] args)
     {
+        Node<Integer> head1=takeInput1();
+        Node<Integer> head2=takeInput1();
 
+        System.out.println("\nI have to sort the following lists: ");
+        printLL2(head1);
+        printLL2(head2);
+
+        System.out.println("\nLists are sorted into a singly linked list: ");
+        printLL2(mergeTwoSortedLinkedLists(head1, head2));
     }
 }
