@@ -14,6 +14,5 @@ public class Stack_ArrayImplement extends Stack_UsingArray
         System.out.println(stack.top());
         System.out.println(stack.size());
         stack.pop();
-//        stack.pop();
     }
 }
