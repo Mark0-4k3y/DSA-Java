@@ -20,7 +20,6 @@ public class Stock_Stack extends Array_Class
         return stockSpan;
     }
 
-
     //This is the best method using stack, have time complexity of O(n).
     public static int[] stockSpanBest(int[] price)
     {
@@ -50,8 +49,6 @@ public class Stock_Stack extends Array_Class
 
         return span;
     }
-
-
 
     public static void main(String[] args)
     {
