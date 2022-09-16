@@ -13,5 +13,12 @@ public class Stack_LL_Implementation
                 Is Stack Empty? """+stack.isEmpty());
         System.out.println("The element at top of stack is: "+stack.top()+" and size of stack is: "+stack.size());
         stack.print();
+
+        stack.push(40);
+        System.out.println("The element at top of stack is: "+stack.top()+" and size of stack is: "+stack.size());
+
+        stack.pop();
+        System.out.println("The element at top of stack is: "+stack.top()+" and size of stack is: "+stack.size());
+
     }
 }
