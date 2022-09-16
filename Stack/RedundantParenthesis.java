@@ -6,7 +6,6 @@ public class RedundantParenthesis
     public static boolean isRedundantParenthesis(String expression)
     {
         int strLen=expression.length();
-
         int index=0;
         Stack<Character> stack=new Stack<>();
         while (index<strLen){
@@ -21,10 +20,8 @@ public class RedundantParenthesis
             }
             index++;
         }
-
         return false;
     }
-
 
     public static void main(String[] args)
     {
