@@ -18,8 +18,6 @@ public class Array_Class
             System.out.println("Enter the "+(i+1)+" Element in the array: ");
             arr[i]=X.nextInt();
         }
-
-
         return arr;
     }
 
