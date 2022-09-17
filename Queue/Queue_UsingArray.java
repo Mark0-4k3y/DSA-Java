@@ -61,11 +61,18 @@ public class Queue_UsingArray
         }
         System.out.println(queue[frontEnd]+" element is dequeued");
         queue[frontEnd]=0;
-        frontEnd++;
-        if (frontEnd == queue.length){
-            frontEnd=0;
-            //This will make circular queue possible.
-        }
+//        frontEnd++;
+//        if (frontEnd == queue.length){
+//            frontEnd=0;
+//            //This will make circular queue possible.
+//        }
+
+        //The fine way of doing this is using modulo operator.
+        frontEnd = (frontEnd+1) % queue.length;
+        //This will again set the frontEnd to 0 when its equal to queue length.
+        //ANd this will only happen when the size is not equal to queue length, means there is space in queue.
+
+
         size--;
         //When the size of the queue becomes 0.
         if (size==0){
