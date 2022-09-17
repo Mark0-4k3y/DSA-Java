@@ -18,10 +18,19 @@ public class Bit_Diference_TwoNumbers
 
         //I will make a loop and right shift the difference each time.
         //In each iteration, I will count number of 1 bit by checking the number, i.e. number is even or odd.
+
         int count=0;
+
+        //This one is old skool method have time complexity of O(log n).
+//        while(difference != 0){
+//            if((difference & 1) != 0) count++;//When odd number.
+//            difference = difference >> 1;
+//        }
+
+        //The best method is this: Time complexity O(Number of set bits)
         while(difference != 0){
-            if((difference & 1) != 0) count++;//When odd number.
-            difference = difference >> 1;
+           difference = difference & (difference-1);
+           count++;
         }
         return count;
     }
