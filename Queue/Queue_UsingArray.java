@@ -34,26 +34,38 @@ public class Queue_UsingArray
     }
 
     public void enqueue(int data) throws QueueLimitOutOfBound {
-        if (rearEnd>=queue.length-1){
+        if (size>=queue.length){
             throw new QueueLimitOutOfBound();
         }
 
         if (frontEnd == -1){
-            queue[++frontEnd]=data;
-            rearEnd++;
-        }else{
-            queue[++rearEnd]=data;
+            frontEnd=0;
         }
+//        rearEnd++;
+//        //This means that there is empty space present at the starting of the array.
+//        if (rearEnd == queue.length){
+//            rearEnd=0;
+//        }
+
+        //The fine way to do this is using modulo operator.
+        rearEnd = (rearEnd+1) % queue.length;
+        //when rearEnd == queue.length, then the remainder=0, and rearEnd set to 0.
+
+        queue[rearEnd]=data;
         size++;
     }
 
     public void dequeue() throws QueueEmptyException {
-        if (frontEnd==-1){
+        if (size==0){
             throw new QueueEmptyException();
         }
         System.out.println(queue[frontEnd]+" element is dequeued");
         queue[frontEnd]=0;
         frontEnd++;
+        if (frontEnd == queue.length){
+            frontEnd=0;
+            //This will make circular queue possible.
+        }
         size--;
         //When the size of the queue becomes 0.
         if (size==0){
