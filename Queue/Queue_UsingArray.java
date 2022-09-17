@@ -34,9 +34,10 @@ public class Queue_UsingArray
     }
 
     public void enqueue(int data) throws QueueLimitOutOfBound {
-        if (size>=queue.length){
-            throw new QueueLimitOutOfBound();
-        }
+        if (size == queue.length){
+//            throw new QueueLimitOutOfBound();
+            queue=dynamicQueue(queue);
+        }//But we should make queue dynamic in nature.
 
         if (frontEnd == -1){
             frontEnd=0;
@@ -54,13 +55,30 @@ public class Queue_UsingArray
         queue[rearEnd]=data;
         size++;
     }
+    private int[] dynamicQueue(int[] queue)
+    {
+        int[] oldQueue=queue;
+
+        queue=new int[2*oldQueue.length];
+        int index=0;
+        for(int i=frontEnd; i<oldQueue.length; i++){
+            queue[index++]=oldQueue[i];
+            System.out.println();
+        }
+        for(int i=0; i<frontEnd; i++){
+            queue[index++]=oldQueue[i];
+        }
+        frontEnd=0;
+        rearEnd=oldQueue.length-1;
+
+        return queue;
+    }
 
     public void dequeue() throws QueueEmptyException {
         if (size==0){
             throw new QueueEmptyException();
         }
         System.out.println(queue[frontEnd]+" element is dequeued");
-        queue[frontEnd]=0;
 //        frontEnd++;
 //        if (frontEnd == queue.length){
 //            frontEnd=0;
@@ -86,10 +104,4 @@ public class Queue_UsingArray
         return queue[frontEnd];
     }
 
-    public void print()
-    {
-        for(int data:queue){
-            System.out.print(data+"<-");
-        }System.out.println("\n");
-    }
 }
