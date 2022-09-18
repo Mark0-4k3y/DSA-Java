@@ -15,9 +15,14 @@ public class Queue_Interface
         //Linked list is the class which already implemented the queue data structure.
         Queue<Integer> queue=new LinkedList<Integer>();
 
+
         System.out.println("Is queue Empty? "+queue.isEmpty());
+
+        //Add element to queue.
         queue.add(10);
         queue.add(20);
+
+
         System.out.println("Size of the queue is: "+queue.size());
         System.out.println("Element present at the front/top/peek of the queue is: "+queue.peek());
         System.out.println("Element which dequeued from the queue is: "+queue.poll());
