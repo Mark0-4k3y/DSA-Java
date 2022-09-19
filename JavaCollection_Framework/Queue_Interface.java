@@ -13,6 +13,7 @@ public class Queue_Interface
 
         //Now to implement queue, I have to use the class which already implemented the queue.
         //Linked list is the class which already implemented the queue data structure.
+
         Queue<Integer> queue=new LinkedList<Integer>();
 
 
@@ -21,7 +22,6 @@ public class Queue_Interface
         //Add element to queue.
         queue.add(10);
         queue.add(20);
-
 
         System.out.println("Size of the queue is: "+queue.size());
         System.out.println("Element present at the front/top/peek of the queue is: "+queue.peek());
