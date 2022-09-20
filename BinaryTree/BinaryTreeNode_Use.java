@@ -18,10 +18,11 @@ public class BinaryTreeNode_Use
 //        rootLeft.rightChild = rootRight2;
 //        rootRight.leftChild = rootLeft2;
 
-        BinaryTreeNode<Integer> root=takeTreeInput_Complex();
+        BinaryTreeNode<Integer> root=takeTreeInput_Easy(true, 0, true);
 
         printDetailed(root);
     }
+
     public static void print(BinaryTreeNode root) {
         if (root == null) return;
         System.out.println(root.data);
@@ -58,6 +59,26 @@ public class BinaryTreeNode_Use
         BinaryTreeNode<Integer> root=new BinaryTreeNode<>(rootData);
         BinaryTreeNode<Integer> rootLeftChild=takeTreeInput_Complex();
         BinaryTreeNode<Integer> rootRightChild=takeTreeInput_Complex();
+        root.leftChild=rootLeftChild;
+        root.rightChild=rootRightChild;
+
+        return root;
+    }
+    public static BinaryTreeNode<Integer> takeTreeInput_Easy(boolean isRoot, int parentData, boolean isLeft)
+    {
+       if (isRoot)  System.out.println("Enter the root data, if not have then enter -1(null): ");
+       else{
+            if (isLeft) System.out.println("Enter the left child of parent "+parentData+", if not have then enter -1(null): ");
+            else System.out.println("Enter the right child of parent "+parentData+", if not have then enter -1(null): ");
+       }
+
+        int rootData=X.nextInt();
+
+        if (rootData == -1) return null;
+
+        BinaryTreeNode<Integer> root=new BinaryTreeNode<>(rootData);
+        BinaryTreeNode<Integer> rootLeftChild=takeTreeInput_Easy(false, rootData, true);
+        BinaryTreeNode<Integer> rootRightChild=takeTreeInput_Easy(false, rootData, false);
         root.leftChild=rootLeftChild;
         root.rightChild=rootRightChild;
 
