@@ -11,6 +11,9 @@ public class Tree_Height extends BinaryTreeNode_Use
         int maxSubtreeHeight=Math.max(leftSubtreeHeight, rightSubtreeHeight);
 
         return 1 + maxSubtreeHeight;
+
+        //Or I can simply write this line:
+        //return 1 + Math.max(height(root.leftChild), height(root.rightChild));
     }
 
     public static void main(String[] args)
