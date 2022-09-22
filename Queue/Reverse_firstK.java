@@ -38,11 +38,9 @@ public class Reverse_firstK
             stack.push(queue.poll());
             k--;
         }
-
         while(!stack.isEmpty()){
             queue.add(stack.pop());
         }
-
         for (int i=0; i<queue.size()-k; i++){
             queue.add(queue.poll());
         }
