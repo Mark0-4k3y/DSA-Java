@@ -34,9 +34,10 @@ public class Reverse_firstK
         if (queue.isEmpty() || k>=queue.size()) return;
 
         Stack<Integer> stack=new Stack<>();
-        while(k>0){
+        int firstK=k;
+        while(firstK>0){
             stack.push(queue.poll());
-            k--;
+            firstK--;
         }
         while(!stack.isEmpty()){
             queue.add(stack.pop());

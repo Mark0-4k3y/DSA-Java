@@ -56,6 +56,19 @@ public class Basic_Operations extends BinaryTreeNode_Use
     }
 
 
+    public static int numOfLeafNodes(BinaryTreeNode<Integer> root)
+    {
+        if(root==null) return 0;
+
+        if (root.leftChild==null && root.rightChild==null){
+            return 1;
+        }
+
+        return numOfLeafNodes(root.leftChild) + numOfLeafNodes(root.rightChild);
+    }
+
+
+
 
     public static void main(String[] args)
     {
@@ -69,5 +82,7 @@ public class Basic_Operations extends BinaryTreeNode_Use
 
         System.out.println("\nPrinting In order: ");
         inOrderPrint(root);
+
+        System.out.println("Number of leaf nodes in binary tree is: "+numOfLeafNodes(root));
     }
 }
