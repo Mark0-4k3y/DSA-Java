@@ -26,13 +26,14 @@ public class Diameter_BinaryTree extends BinaryTreeNode_Use
     private static  HeigthAndDiameter diameter(BinaryTreeNode<Integer> root)
     {
         if (root==null){
-            //In this constructor the default value of hieght and diameter is 0.
+            //In this constructor the default value of height and diameter is 0.
             return new HeigthAndDiameter();
         }
 
         HeigthAndDiameter leftSubtree=diameter(root.leftChild);
         HeigthAndDiameter rightSubtree=diameter(root.rightChild);
 
+        //Defining the diameter.
         int leftDiameter=leftSubtree.diameter;
         int rightDiameter=rightSubtree.diameter;
 
