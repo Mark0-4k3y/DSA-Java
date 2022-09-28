@@ -53,5 +53,6 @@ public class Diameter_BinaryTree extends BinaryTreeNode_Use
         printDetailed(root);
 
         System.out.println("The diameter of binary tree is: "+binaryTreeDiameter(root));
+
     }
 }
