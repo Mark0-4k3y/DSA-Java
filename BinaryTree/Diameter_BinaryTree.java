@@ -36,6 +36,7 @@ public class Diameter_BinaryTree extends BinaryTreeNode_Use
         //Defining the diameter.
         int leftDiameter=leftSubtree.diameter;
         int rightDiameter=rightSubtree.diameter;
+        
 
         //Distance denotes the deepest distance between left subtree node and right subtree node.
         int distance= 1 + leftSubtree.height + rightSubtree.height;
