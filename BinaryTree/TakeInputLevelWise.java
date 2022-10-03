@@ -7,6 +7,7 @@ public class TakeInputLevelWise extends BinaryTreeNode_Use
 {
     public static Scanner X=new Scanner(System.in);
 
+    //Function to take level wise Input.
     public static BinaryTreeNode<Integer> takeInputLevelwise(){
         System.out.println("Enter the root data for the binary tree: ");
         int rootData=X.nextInt();
@@ -38,6 +39,8 @@ public class TakeInputLevelWise extends BinaryTreeNode_Use
         return root;
     }
 
+
+    //Function to print levelwise.
     public static void printLevelWise(BinaryTreeNode<Integer> root)
     {
         if (root==null) return;
