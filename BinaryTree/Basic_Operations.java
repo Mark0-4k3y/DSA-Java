@@ -2,7 +2,7 @@ package BinaryTree;
 
 import com.sun.source.tree.IfTree;
 
-public class Basic_Operations extends BinaryTreeNode_Use
+public class Basic_Operations extends TakeInputLevelWise
 {
     public static int numOfNodes(BinaryTreeNode<Integer> root)
     {
@@ -72,7 +72,7 @@ public class Basic_Operations extends BinaryTreeNode_Use
 
     public static void main(String[] args)
     {
-        BinaryTreeNode<Integer> root=takeTreeInput_Easy(true, 0, true);
+        BinaryTreeNode<Integer> root=takeInputLevelwise();
 
         System.out.println("\nPrinting Pre order: ");
         preOrderPrint(root);
