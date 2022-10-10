@@ -1,7 +1,7 @@
 package BinaryTree;
 import java.util.Arrays;
 
-public class ConstructTreeUsingInorderAndPostOrder
+public class ConstructTreeUsingInorderAndPostOrder extends TakeInputLevelWise
 {
     public static BinaryTreeNode<Integer> buildTree(int[] preOrder, int[] inOrder)
     {
@@ -50,6 +50,15 @@ public class ConstructTreeUsingInorderAndPostOrder
         root.rightChild=rightSubtree;
 
         return root;
+    }
+
+
+    public static void main(String[] args)
+    {
+        int[] inOrder={4, 2, 5, 1, 6, 3};
+        int[] preOrder={1, 2, 4, 5, 3, 6};
+        BinaryTreeNode<Integer> root=buildTree(preOrder, inOrder);
+        printLevelWise(root);
     }
 
 }
