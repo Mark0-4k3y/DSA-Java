@@ -68,8 +68,6 @@ public class Basic_Operations extends TakeInputLevelWise
     }
 
 
-
-
     public static void main(String[] args)
     {
         BinaryTreeNode<Integer> root=takeInputLevelwise();
