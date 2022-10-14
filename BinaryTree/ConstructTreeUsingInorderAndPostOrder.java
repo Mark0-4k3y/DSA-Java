@@ -28,8 +28,8 @@ public class ConstructTreeUsingInorderAndPostOrder extends TakeInputLevelWise
 
         if (rootIndex==-1) return null;
 
+        //Left Subtree Length.
         int leftSubtreeLength = rootIndex - siIn;
-        int rightSubtreeLength = eiIn - rootIndex;
 
         //Left Subtree Parameters.
         int siLeftpre = siPre+1;
