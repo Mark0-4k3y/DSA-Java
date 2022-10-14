@@ -16,10 +16,7 @@ public class MinimumAndMaximumValue extends TakeInputLevelWise
     public static Pair<Integer, Integer> getMinAndMax(BinaryTreeNode<Integer> root)
     {
         if(root==null){
-//            int min=Integer.MAX_VALUE;
-//            int max=Integer.MIN_VALUE;
-            Pair answer=new Pair<Integer, Integer>(Integer.MAX_VALUE, Integer.MIN_VALUE);
-            return answer;
+            return new Pair<Integer, Integer>(Integer.MAX_VALUE, Integer.MIN_VALUE);
         }
 
         Pair<Integer, Integer> leftSubtree = getMinAndMax(root.leftChild);
@@ -29,5 +26,14 @@ public class MinimumAndMaximumValue extends TakeInputLevelWise
         int max=Math.max(root.data, Math.max(leftSubtree.maximum, rightSubtree.maximum));
 
         return new Pair(min, max);
+    }
+
+    public static void main(String[] args)
+    {
+        BinaryTreeNode<Integer> root=takeInputLevelwise();
+        printDetailed(root);
+
+        Pair answer=getMinAndMax(root);
+        System.out.println("Minimum and Maximum values are: "+answer.minimum+" "+answer.maximum);
     }
 }
