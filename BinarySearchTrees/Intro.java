@@ -92,11 +92,29 @@ public class Intro extends BuidBST_UsingSortedArray
         return new isBSTClass(maximum, minimum, isBST);
     }
 
+
+    //The best method is to do by boundation method.
+    public static boolean isBSTbest(BinaryTreeNode<Integer> root)
+    {
+        if (root==null) return true;
+        return isBSTbestHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+    private static boolean isBSTbestHelper(BinaryTreeNode<Integer> root, int minimum, int maximum)
+    {
+        if (root==null) return true;
+
+        if (root.data<=minimum || root.data>maximum) return false;
+        boolean isLeftBST=isBSTbestHelper(root.leftChild, minimum, root.data-1);
+        boolean isRightBST=isBSTbestHelper(root.rightChild, root.data, maximum);
+
+        return isLeftBST && isRightBST;
+    }
+
     public static void main(String[] args)
     {
         Scanner X=new Scanner(System.in);
-        int[] arr={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+        int[] arr={1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11};
         BinaryTreeNode<Integer> root=SortedArrayToBST(arr);
-        System.out.println("is BST? "+isBinarySearchTree(root));
+        System.out.println("is BST? "+isBSTbest(root));
     }
 }
