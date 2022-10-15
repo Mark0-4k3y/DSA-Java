@@ -15,7 +15,7 @@ public class BuidBST_UsingSortedArray
         BinaryTreeNode<Integer> root=new BinaryTreeNode<Integer>(arr[mi]);
 
         BinaryTreeNode<Integer> leftSubtree=buildBST(arr, si, mi-1);
-        BinaryTreeNode<Integer> rightSubtree=buildBST(arr, si, mi-1);
+        BinaryTreeNode<Integer> rightSubtree=buildBST(arr, mi+1, ei);
 
         root.leftChild=leftSubtree;
         root.rightChild=rightSubtree;
