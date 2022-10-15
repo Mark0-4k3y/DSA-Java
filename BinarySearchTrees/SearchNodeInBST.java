@@ -2,7 +2,9 @@ package BinarySearchTrees;
 import BinaryTree.BinaryTreeNode;
 import BinaryTree.TakeInputLevelWise;
 
-public class SearchNodeInBST extends TakeInputLevelWise
+import java.util.Scanner;
+
+public class SearchNodeInBST extends BuidBST_UsingSortedArray
 {
     public static boolean isNodePresentInBST(BinaryTreeNode<Integer> root, int data)
     {
@@ -18,7 +20,10 @@ public class SearchNodeInBST extends TakeInputLevelWise
 
     public static void main(String[] args)
     {
-        BinaryTreeNode<Integer> root=takeInputLevelwise();
+        Scanner X=new Scanner(System.in);
+
+        int[] arr={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        BinaryTreeNode<Integer> root=SortedArrayToBST(arr);
         int data=X.nextInt();
         System.out.println("Is node with data "+ data +" present in BST?! "+isNodePresentInBST(root, data));
 
