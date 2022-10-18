@@ -66,7 +66,7 @@ public class Intro extends BuidBST_UsingSortedArray
 
     //To reduce we use class to get three things from it.
     public static boolean isBinarySearchTree(BinaryTreeNode<Integer> root)
-    {
+     {
         if (root==null) return true;
         isBSTClass answer=isBSTHelper(root);
         return answer.isBST;

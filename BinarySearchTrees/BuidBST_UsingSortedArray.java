@@ -1,6 +1,8 @@
 package BinarySearchTrees;
 import BinaryTree.BinaryTreeNode;
-public class BuidBST_UsingSortedArray
+import BinaryTree.BinaryTreeNode_Use;
+
+public class BuidBST_UsingSortedArray extends BinaryTreeNode_Use
 {
     public static BinaryTreeNode<Integer> SortedArrayToBST(int[] arr)
     {
@@ -27,5 +29,6 @@ public class BuidBST_UsingSortedArray
     {
         int[] arr={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
         BinaryTreeNode<Integer> root=SortedArrayToBST(arr);
+        printDetailed(root);
     }
 }
