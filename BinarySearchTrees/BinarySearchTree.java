@@ -1,6 +1,16 @@
 package BinarySearchTrees;
 import BinaryTree.BinaryTreeNode;
 
+class DeleteNode{
+    BinaryTreeNode<Integer> root;
+    boolean isPresent;
+    public DeleteNode(BinaryTreeNode<Integer> root, boolean isPresent)
+    {
+        this.root=root;
+        this.isPresent=isPresent;
+    }
+}
+
 public class BinarySearchTree
 {
     private BinaryTreeNode<Integer> root;
@@ -40,13 +50,63 @@ public class BinarySearchTree
 
     public void deleteData(int nodeData)
     {
+        DeleteNode delete=deleteNode(root, nodeData);
 
     }
+    private static DeleteNode deleteNode(BinaryTreeNode<Integer> root, int deleteData)
+    {
+        if (root==null){return new DeleteNode(null, false);}
+
+        if (deleteData<root.data){
+            DeleteNode leftUpdated=deleteNode(root.leftChild, deleteData);
+            root.leftChild=leftUpdated.root;
+            leftUpdated.root=root;
+            return leftUpdated;
+        }else if(root.data<deleteData){
+            DeleteNode rightUpdated=deleteNode(root.rightChild, deleteData);
+            root.rightChild=rightUpdated.root;
+            rightUpdated.root=root;
+            return rightUpdated;
+        }else{
+            //First case when the root has no child:
+            if (root.leftChild==null && root.rightChild==null){
+                return new DeleteNode(null, true);
+            }else if(root.leftChild==null && root.rightChild!=null){
+                return new DeleteNode(root.rightChild, true);
+            }else if(root.leftChild!=null && root.rightChild==null){
+                return new DeleteNode(root.leftChild, true);
+            }else{
+                /*
+                In this case when both child are present. We will have to replace the root data.
+
+                1. First is we can the largest node data from left child band replace it with to delete node data.
+                   But the problem is this that, if on the left side the tree contain duplicate numbers than it will not make a Binary Search tree.
+                   Because in BST left side nodes should be less than and also not equal to the parent root.
+
+                2. So we have to find the minimum from the right child and replace it with the delete root data
+                   In this if multiple duplicate nodes present than it will follow BST rule.
+                 */
+
+                BinaryTreeNode<Integer> smallestNode=root.rightChild;
+                while(smallestNode.leftChild!=null){
+                    smallestNode=smallestNode.leftChild;
+                }
+                root.data=smallestNode.data;
+                DeleteNode updatesRight=deleteNode(root.rightChild, smallestNode.data);
+                root.rightChild=updatesRight.root;
+                return new DeleteNode(root, true);
+            }
+        }
+    }
+
+
+
 
     public int size()
     {
         return size;
     }
+
 
 
     //Print the binary tree.
