@@ -1,7 +1,7 @@
 package BinarySearchTrees;
 import BinaryTree.BinaryTreeNode;
 
-class DeleteNode{
+class DeleteNode  {
     BinaryTreeNode<Integer> root;
     boolean isPresent;
     public DeleteNode(BinaryTreeNode<Integer> root, boolean isPresent)
