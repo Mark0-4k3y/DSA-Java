@@ -18,16 +18,16 @@ public class BinarySearchTree
 
 
     //Check whether the node present in the binary tree or not?!
-    public boolean isPresent(int nodeData) {return isPresentHelper(root, nodeData);}
+    public boolean search(int nodeData) {return isPresentHelper(root, nodeData);}
     private static boolean isPresentHelper(BinaryTreeNode<Integer> node, int nodeData) {
         if(node==null) return false;
-
         if (node.data==nodeData) return true;
         return isPresentHelper(node.leftChild, nodeData) || isPresentHelper(node.rightChild, nodeData);
     }
-//  You can't use a class's generic type parameters in static methods or static fields.
-//  The class's type parameters are only in scope for instance methods and instance fields.
 
+
+    //  You can't use a class's generic type parameters in static methods or static fields.
+    //  The class's type parameters are only in scope for instance methods and instance fields.
 
     public void insert(int nodeData){root=insertHelper(root, nodeData); size++;}
     private static BinaryTreeNode<Integer> insertHelper(BinaryTreeNode<Integer> node, int nodeData){
@@ -48,7 +48,7 @@ public class BinarySearchTree
     }
 
 
-    public void deleteData(int nodeData)
+    public void remove(int nodeData)
     {
         DeleteNode delete=deleteNode(root, nodeData);
 
@@ -100,16 +100,12 @@ public class BinarySearchTree
     }
 
 
-
-
     public int size()
     {
         return size;
     }
 
 
-
-    //Print the binary tree.
     public void printTree() {printTreeHelper(root);}
     private static void printTreeHelper(BinaryTreeNode<Integer> node)
     {
@@ -127,4 +123,8 @@ public class BinarySearchTree
         printTreeHelper(node.rightChild);
 
     }
+
 }
+
+
+
