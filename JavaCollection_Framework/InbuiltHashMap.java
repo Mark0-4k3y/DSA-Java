@@ -13,8 +13,6 @@ public class InbuiltHashMap
         map.put("abc", 3);
         map.put("fuck", 9);
         map.put("d", 1);
-        int max=Integer.MIN_VALUE;
-
         //Size function to find the size of the HashMap O(1).
         System.out.println("Size of the HashMap is: "+map.size());
 
