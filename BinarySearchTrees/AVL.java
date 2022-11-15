@@ -54,7 +54,7 @@ public class AVL
     }
 
     // Get Balance factor of node N
-    int getBalance(AVLNode N) {
+    int getBalance(AVLNode N)  {
         if (N == null)
             return 0;
 
