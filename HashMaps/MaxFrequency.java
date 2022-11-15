@@ -5,8 +5,6 @@ public class MaxFrequency
 {
     public static int maxFrequencyNumber(int[] arr)
     {
-        if (arr.length <= 0) return Integer.MIN_VALUE;
-
         HashMap<Integer, Integer> map=new HashMap<>();
         for(int element : arr){
             if(map.containsKey(element)){
@@ -15,7 +13,6 @@ public class MaxFrequency
                 map.put(element, 1);
             }
         }
-
         int maxFrequency = 0, maxFrequencyEle = Integer.MIN_VALUE;
         // Set<Integer> keys=map.keySet();
         // for(int key : keys){
@@ -32,7 +29,13 @@ public class MaxFrequency
                 maxFrequencyEle = key;
             }
         }
-
         return maxFrequencyEle;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr={1, 2, 3, 4, 1, 1, 6, 7, 2, 4, 4, 4, 5};
+        int maxFrequencyNum = maxFrequencyNumber(arr);
+        System.out.println("The element with maximum frequency in array is: "+maxFrequencyNum);
     }
 }
