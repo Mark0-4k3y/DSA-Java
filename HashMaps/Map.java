@@ -41,8 +41,7 @@ public class Map<K,V> {
         buckets.set(hashIndex, insertNode);//setting the new head at the hash index.
         count++;
 
-        double loadFactor = (1.0*count)/numOfBuckets;
-        if (loadFactor > 0.7){
+        if (loadFactor() > 0.7){
             reHash();
         }
     }
