@@ -20,7 +20,7 @@ public class Map<K,V> {
         int hashIndex = hashCode % numOfBuckets; //Compressing the generated hash function.
         return hashIndex;
     }
-    public void insert(K key, V value){
+        public void insert(K key, V value){
 
         int hashIndex=getHashIndex(key);
 
@@ -101,5 +101,23 @@ public class Map<K,V> {
     }
     public double loadFactor(){
         return (1.0*count)/numOfBuckets;
+    }
+
+
+    public boolean containsKey(K key){
+        int hashIndex=getHashIndex(key);
+        MapNode<K,V> head=buckets.get(hashIndex);
+        while(head != null){
+            if (head.key.equals(key)) return true;
+        }
+        return false;
+    }
+    public boolean containsValue(K key, V value){
+        int hashIndex=getHashIndex(key);
+        MapNode<K,V> head=buckets.get(hashIndex);
+        while(head != null){
+            if (head.value.equals(value)) return true;
+        }
+        return false;
     }
 }
