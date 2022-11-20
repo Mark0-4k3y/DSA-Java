@@ -9,7 +9,7 @@ public class Map<K,V> {
 
     public Map(){
         buckets=new ArrayList<>();
-        numOfBuckets=20;
+        numOfBuckets=5;
         for(int index=0; index<numOfBuckets; index++){
             buckets.add(null);
         }
@@ -21,7 +21,9 @@ public class Map<K,V> {
         return hashIndex;
     }
     public void insert(K key, V value){
+
         int hashIndex=getHashIndex(key);
+
         MapNode<K, V> head=buckets.get(hashIndex);
         while(head != null){
             if (head.key.equals(key)){
@@ -48,7 +50,6 @@ public class Map<K,V> {
     public int getSize(){
         return count;
     }//NUmber of elements in the hashMap.
-
     public V getValue(K key){
         int hashIndex=getHashIndex(key);
         MapNode<K,V> head= buckets.get(hashIndex);
@@ -58,7 +59,6 @@ public class Map<K,V> {
         }
         return null;
     }
-
     public V removeKeyValue(K key){
         int hashIndex=getHashIndex(key);
         MapNode<K,V> head= buckets.get(hashIndex);
@@ -96,7 +96,11 @@ public class Map<K,V> {
             MapNode<K,V> head=oldBuckets.get(index);
             while (head != null){
                 insert(head.key, head.value); //Inserting in buckets as default.
+                head=head.next;
             }
         }
+    }
+    public double loadFactor(){
+        return (1.0*count)/numOfBuckets;
     }
 }
