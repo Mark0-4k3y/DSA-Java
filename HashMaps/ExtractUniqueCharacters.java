@@ -1,7 +1,7 @@
 package HashMaps;
 import java.util.HashMap;
 import java.util.Set;
-
+import java.util.Scanner;
 public class ExtractUniqueCharacters
 {
     public static String extractUniqueChars(String str)
@@ -31,5 +31,12 @@ public class ExtractUniqueCharacters
 //        }
 
         return newStr;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner X=new Scanner(System.in);
+        String str=X.nextLine();
+        System.out.println("String after extract the unique characters: "+extractUniqueChars(str));
     }
 }
