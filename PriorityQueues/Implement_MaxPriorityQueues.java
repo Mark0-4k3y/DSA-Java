@@ -63,6 +63,7 @@ public class Implement_MaxPriorityQueues<G>
             }
 
             if (maxIndex==parentIndex) break;
+
             PriorityQueue_Element temp=heap.get(maxIndex);
             heap.set(maxIndex, heap.get(parentIndex));
             heap.set(parentIndex, temp);

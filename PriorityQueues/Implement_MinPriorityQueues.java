@@ -64,7 +64,7 @@ public class Implement_MinPriorityQueues<G>
                 //First I here compared the right child index with size because what is the right child is not there in heap?!
                 minIndex=rightChildIndex;
             }
-            //PLease include this line for avoid infinite loop.
+            //PLease include this line for avo  id infinite loop.
             if(minIndex == parentIndex) break;
 
             PriorityQueue_Element temp=heap.get(minIndex);
