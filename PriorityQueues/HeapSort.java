@@ -48,8 +48,6 @@ public class HeapSort
             downHeapify(heap,0, lastIndex-1);
         }
     }
-
-
     private static void downHeapify(int[] heap,int si, int ei)
     {
         int parentIndex = si;
