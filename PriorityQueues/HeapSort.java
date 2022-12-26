@@ -80,7 +80,16 @@ public class HeapSort
 
     public static void main(String[] args)
     {
-        int[] arr=new int[5];
-        int length=arr.length;
+        int[] arr={10, 5, 11, 2, 3, 7, 12, 1, 6};
+
+//        inplaceHeapSort1(arr);
+//        for(int ele:arr){
+//            System.out.print(ele+" ");
+//        }System.out.println(" ");
+
+        inplaceHeapSort2(arr);
+        for(int ele:arr){
+            System.out.print(ele+" ");
+        }System.out.println(" ");
     }
 }
