@@ -2,6 +2,7 @@ package PriorityQueues;
 
 public class HeapSort
 {
+    //Not good time complexity.
     public static void inplaceHeapSort1(int heap[])
     {
         //1. First I will make a heap using upheapify operation.
@@ -28,6 +29,7 @@ public class HeapSort
         }
     }
 
+    //Good Time complexity.
     public static void inplaceHeapSort2(int heap[])
     {
         // 1. First I will make it a heap.
