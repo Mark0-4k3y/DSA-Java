@@ -1,5 +1,4 @@
 package JavaCollection_Framework;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
@@ -15,21 +14,21 @@ public class InBuilt_PriorityQueues
         //Adding elements to the queue.
         for(int ele:arr) pq.add(ele);
 
-//        //Checking element present at the peek, two functions available;
+        //Checking element present at the peek, two functions available;
+        System.out.println(pq.element());
+        System.out.println("Element present at the peek is: "+pq.peek());
+        //The difference is when the queue is empty element() return error, while peek() return null.
+
+
+        //We use poll to remove element from the queue.
+        System.out.println(pq.poll());
+
+        //checking is empty condition.
+        while(!pq.isEmpty()){
+            System.out.println(pq.poll());
+        }
 //        System.out.println(pq.element());
-//        System.out.println("Element present at the peek is: "+pq.peek());
-//        //The difference is when the queue is empty element() return error, while peek() return null.
-//
-//
-//        //We use poll to remove element from the queue.
-//        System.out.println(pq.poll());
-//
-//        //checking is empty condition.
-//        while(!pq.isEmpty()){
-//            System.out.println(pq.poll());
-//        }
-////        System.out.println(pq.element());
-//        System.out.println("Element present at the peek is: "+pq.peek());
+        System.out.println("Element present at the peek is: "+pq.peek());
 
 
 
