@@ -25,6 +25,19 @@ public class GeneStringProblem
 
         int startIndex=genomeData.indexOf("ATG");
         int endIndex=genomeData.indexOf("TAA", startIndex);
-        System.out.println(genomeData.substring(startIndex, endIndex+3));
+        System.out.println("\nThe first founded gene: "+genomeData.substring(startIndex, endIndex+3)+"\n");
+
+        //We have to check the length to complete one codon, One codon=3characters or Nucleotide.
+        boolean isValid=false;
+        if((endIndex-startIndex)%3==0) {
+            System.out.println("In the first time: ");
+            System.out.println("Valid gene is: "+genomeData.substring(startIndex, endIndex+3));
+            return;
+        }
+
+        while(!isValid && endIndex<genomeData.length()){
+            endIndex=genomeData.indexOf("TAA", endIndex+1);
+            if((endIndex-startIndex)%3==0) isValid=true;
+        }System.out.println("Valid gene is: "+genomeData.substring(startIndex, endIndex+3));
     }
 }
