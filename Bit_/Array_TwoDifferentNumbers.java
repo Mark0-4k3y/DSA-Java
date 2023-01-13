@@ -1,7 +1,6 @@
 package Bit_;
 import Recursion.Searching_AND_Sorting.Array_Class;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Array_TwoDifferentNumbers extends Array_Class
 {
@@ -18,10 +17,11 @@ public class Array_TwoDifferentNumbers extends Array_Class
     //Code for return two single number present in whole array, where other elements present twice.
     public static int twoSingleNumber(int[] arr)
     {
-        int answXOR = oneSingleNumber(arr);
+        int xor=arr[0];
+        for(int index=1; index<arr.length; index++) xor^=arr[index];
 
         //Finding the rightmost set bit of the answXOR value.
-        int count=0, temp=answXOR;
+        int count=0, temp=xor;
         while(temp!=0){
             temp = temp & (temp-1);
             count++;
@@ -41,7 +41,6 @@ public class Array_TwoDifferentNumbers extends Array_Class
     {
         int[] arr=Array_Class();
         printArray(arr);
-
 //        twoSingleNumber(arr);
     }
 }

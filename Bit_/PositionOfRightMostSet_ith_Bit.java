@@ -20,6 +20,12 @@ public class PositionOfRightMostSet_ith_Bit
             num>>=1;
             count++;
         }
+        //Another approach
+//        int count=0, temp=num;
+//        while(temp!=0){
+//            temp = temp & (temp-1);
+//            count++;
+//        }
 
         return -1;
     }
