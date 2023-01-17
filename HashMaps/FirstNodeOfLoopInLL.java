@@ -25,4 +25,21 @@ public class FirstNodeOfLoopInLL
         }
         return -1;
     }
+
+    public static void main(String[] args)
+    {
+        Node head=new Node(1);
+        int num=2;
+        Node tail=head;
+        while(num<=5){
+            Node nextNode=new Node(num);
+            tail.next=nextNode;
+            tail=nextNode;
+            num++;
+        }
+
+        //Making a loop.
+        tail.next=head.next.next;//(Loop: 5 -> 3)
+        System.out.println("The first node of the loop is: "+findFirstNode(head));
+    }
 }
