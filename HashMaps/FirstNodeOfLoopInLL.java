@@ -10,6 +10,8 @@ class Node
         next = null;
     }
 }
+
+
 public class FirstNodeOfLoopInLL
 {
     public static int findFirstNode(Node head)
