@@ -10,9 +10,7 @@ public class FirstEleToOccurKtimes
         for(int element:arr){
             hash.put(element, hash.getOrDefault(element, 0)+1);
             if(hash.containsKey(element)) if(hash.get(element)>=k) return element;
-
         }
-
         return -1;
     }
 
