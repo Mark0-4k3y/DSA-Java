@@ -1,5 +1,35 @@
 package Recursion;
 
+
+class PrintSubsequences
+{
+    public static void main(String[] args)
+    {
+        String str="xyz";
+        printSubsequences(str);
+    }
+
+    private static void printSubsequences(String str)
+    {
+        printSubsequences(str, " ");
+    }
+    private static void printSubsequences(String str, String outputSoFar)
+    {
+        if (str.length()==0) {
+            System.out.println(outputSoFar);
+            return;
+        }
+
+        //When character don't want to take part in output.
+        printSubsequences(str.substring(1), outputSoFar);
+
+        //When character want to take part in output.
+        printSubsequences(str.substring(1), outputSoFar + str.charAt(0));
+    }
+}
+
+
+
 public class ReturnSubsequences
 {
     public static void main(String[] args)

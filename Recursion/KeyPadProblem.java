@@ -28,7 +28,6 @@ public class KeyPadProblem
                 answer[index] = smallAns[loop] + ele;
                 index++;
             }
-
         }
 
         return answer;
