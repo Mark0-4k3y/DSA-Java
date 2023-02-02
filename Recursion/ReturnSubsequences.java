@@ -16,10 +16,10 @@ class PrintSubsequences
     private static void printSubsequences(String str, String outputSoFar)
     {
         if (str.length()==0) {
+            //Means input string is empty, and now we will simply print the output till we have this moment.
             System.out.println(outputSoFar);
             return;
         }
-
         //When character don't want to take part in output.
         printSubsequences(str.substring(1), outputSoFar);
 
